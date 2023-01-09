@@ -14,64 +14,68 @@
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="style.css">
-   <script src="main.js"></script>
+   <script defer src="main.js"></script>
 </head>
 
 <body>
    <nav id="navbar">
       <div class="navbar__logo">
-         <img src="imgs/donghan-logo-white80.png" alt="logo">
+         <a href="#"><img src="imgs/donghan-logo-white80.png" alt="logo"></a>
       </div>
       <ul class="navbar__menu">
-         <li class="navbar__menu__item">Home</li>
-         <li class="navbar__menu__item">About me</li>
-         <li class="navbar__menu__item">Skills</li>
-         <li class="navbar__menu__item">My works</li>
-         <li class="navbar__menu__item">Read book</li>
-         <li class="navbar__menu__item">contact</li>
+         <li class="navbar__menu__item" data-link="#home">Home</li>
+         <li class="navbar__menu__item" data-link="#about">About me</li>
+         <li class="navbar__menu__item" data-link="#skills">Skills</li>
+         <li class="navbar__menu__item" data-link="#works">My works</li>
+         <li class="navbar__menu__item" data-link="#read">Read book</li>
+         <li class="navbar__menu__item" data-link="#contact">contact</li>
       </ul>
+      <!-- Toggle button -->
+      <button class="navbar__toggle-btn">
+         <i class="fa-solid fa-bars"></i>
+      </button>
    </nav>
 
    <!-- Home -->
    <section id="home">
       <div class="home__container">
-         <img src="imgs/profile.jpg" alt="avatar" class="home__avatar">
-         <h1>안녕하세요.</h1>
+         <img src="imgs/profile.png" alt="avatar" class="home__avatar">
+         <h1 class="home__title">안녕하세요.</h1>
          <h2 class="home__description">프론트엔드 개발자로 새로운 꿈을 꾸는 김동한입니다.</h2>
          <button class="home__contact">Contact Me!</button>
       </div>
    </section>
 
    <!-- About me -->
-   <section id="about">
+   <section id="about" class="section section__container">
       <h1>About me</h1>
       <p>
          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, similique sunt aliquid recusandae aut soluta
          sint, eligendi nemo architecto ipsum illum harum nam exercitationem saepe fuga ad? Eum, numquam deserunt.
       </p>
-      <div class="about__major">
+      <div class="about__majors">
          <div class="major">
             <div class="major__icon">
                <i class="fa-brands fa-html5"></i>
-               <h2 class="major__title">HTML</h2>
-               <div class="major__description"></div>
             </div>
+            <h2 class="major__title">HTML</h2>
+            <div class="major__description"></div>
          </div>
 
          <div class="major">
             <div class="major__icon">
                <i class="fa-brands fa-css3-alt"></i>
-               <h2 class="major__title">CSS</h2>
-               <div class="major__description"></div>
             </div>
+            <h2 class="major__title">CSS</h2>
+            <div class="major__description"></div>
          </div>
 
          <div class="major">
             <div class="major__icon">
                <i class="fa-brands fa-square-js"></i>
-               <h2 class="major__title">JavaScript</h2>
-               <div class="major__description"></div>
             </div>
+            <h2 class="major__title">JavaScript</h2>
+            <div class="major__description"></div>
          </div>
       </div>
 
@@ -95,14 +99,16 @@
    </section>
 
    <!-- Skills -->
-   <section id="skills">
-      <h1>Skills</h1>
-      <h2>Skills & Attributes</h2>
-      <p>
-         Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, ducimus? Ducimus, ipsum nulla unde
-         porro nobis iste aliquam vel similique voluptatibus, dolore a, atque eligendi. Eos quidem nihil mollitia
-         minima!
-      </p>
+   <section id="skills" class="section">
+      <div class="section__container">
+         <h1>Skills</h1>
+         <h2>Skills & Attributes</h2>
+         <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, ducimus? Ducimus, ipsum nulla unde
+            porro nobis iste aliquam vel similique voluptatibus, dolore a, atque eligendi. Eos quidem nihil mollitia
+            minima!
+         </p>
+      </div>
       <div class="skillset">
          <div class="skillset__left">
             <h3 class="skillset__title">skill</h3>
@@ -112,28 +118,27 @@
                   <span>90%</span>
                </div>
                <div class="skill__bar">
-                  <div class="skill__value"></div>
+                  <div class="skill__value" style="width: 90%;"></div>
                </div>
             </div>
-         </div>
+            <div class="skill">
+               <div class="skill__description">
+                  <span>CSS</span>
+                  <span>85%</span>
+               </div>
+               <div class="skill__bar">
+                  <div class="skill__value" style="width: 85%;"></div>
+               </div>
+            </div>
 
-         <div class="skill">
-            <div class="skill__description">
-               <span>CSS</span>
-               <span>85%</span>
-            </div>
-            <div class="skill__bar">
-               <div class="skill__value"></div>
-            </div>
-         </div>
-
-         <div class="skill">
-            <div class="skill__description">
-               <span>JavaScript</span>
-               <span>70%</span>
-            </div>
-            <div class="skill__bar">
-               <div class="skill__value"></div>
+            <div class="skill">
+               <div class="skill__description">
+                  <span>JavaScript</span>
+                  <span>70%</span>
+               </div>
+               <div class="skill__bar">
+                  <div class="skill__value" style="width: 70%;"></div>
+               </div>
             </div>
          </div>
          <div class="skillset__right">
@@ -150,12 +155,12 @@
    </section>
 
    <!-- My works -->
-   <section id="works">
+   <section id="works" class="section section__container">
       <h1>My works</h1>
       <h3>Projects</h3>
       <div class="work__project">
-         <a href="http://kofo.dothome.co.kr/" class="project">
-            <img src="projects/kofo.png" alt="한식기행">
+         <a href="http://kofo.dothome.co.kr/" class="project" target="_blank" data-type="website">
+            <img class="project__img" src="projects/kofo.png" alt="한식기행">
             <div class="project__description">
                <h3>한식기행</h3>
                <span>그누보드와 Bootstrap을 활용한 웹사이트입니다.</span>
@@ -165,7 +170,7 @@
    </section>
 
    <!-- Read book -->
-   <section id="read">
+   <section id="read" class="section">
       <h1>Read books</h1>
       <h3>공부하면서 읽었던 책입니다.</h3>
       <div class="read__book">
@@ -190,7 +195,7 @@
    </section>
 
    <!-- contact -->
-   <section id="contact">
+   <section id="contact" class="section">
       <h1 class="contact__title">
          Let's talk
       </h1>
@@ -203,6 +208,11 @@
          </a>
       </div>
    </section>
+
+   <!-- Arrow btn -->
+   <div class="arrow-btn">
+      <i class="fa-solid fa-arrow-up"></i>
+   </div>
 </body>
 
 </html>
